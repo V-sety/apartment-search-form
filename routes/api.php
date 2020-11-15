@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Api'], function (){
 
-    Route::get('/', [ SearchController::class, 'index']);
+    Route::post('/houses/search', [ SearchController::class, 'search']);
 });
