@@ -139,6 +139,10 @@ export default {
           data.append('garages', this.form.bathrooms);
         }
 
+
+
+        /*using axios instead of ajax because it was alredy preinstalled with the laravel boiler plate
+        and we dont really need the whole jquery just for the sake of ajax usage*/
         axios.post('api/houses/search', data)
         .then(response => this.tableOutput = response.data.data)
         .catch(error => console.log(error))
